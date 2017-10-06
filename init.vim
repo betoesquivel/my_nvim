@@ -6,7 +6,7 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'othree/html5.vim'
-Plug 'vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 
@@ -27,9 +27,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'kien/rainbow_parentheses.vim', { 'for' : 'clojure' }
-
-" Latex
-Plug 'xuhdev/vim-latex-live-preview'
 
 "Trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
@@ -87,6 +84,7 @@ set clipboard+=unnamedplus
 set background=dark
 let mapleader=","
 colorscheme solarized
+let g:solarized_visibility = "high"
 
 "new
 
