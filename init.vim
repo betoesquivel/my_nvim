@@ -1,8 +1,6 @@
 call plug#begin()
 " Basic
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'othree/html5.vim'
@@ -15,6 +13,9 @@ Plug 'jpalardy/vim-slime'
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
+
+" Code navigation (go to definition)
+Plug 'ludovicchabant/vim-gutentags'
 
 " Comments
 Plug 'scrooloose/nerdcommenter'
@@ -74,8 +75,15 @@ set path+=**
 set wildmenu
 "pause new
 
-autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'open -a Preview'
+"gutentags
+let g:gutentags_cache_dir = '~/.gutentags'
+let g:gutentags_exclude_project_root = ['/usr/local','~/workspace/signal/tmp','~/workspace/signal/Research-Notebooks']
+let g:gutentags_ctags_exclude = ['tmp/*','data/*','models/*','vectorisers/*','scripts/*']
+let g:gutentags_file_list_command = {
+   \ 'markers': {
+     \ '.git': 'git ls-files'
+   \ },
+\ }
 
 set shell=bash\ -i
 set clipboard+=unnamedplus
@@ -109,6 +117,10 @@ set colorcolumn=85
 
 "pause new
 
+" mouse
+set mouse=a
+"
+
 " Tabbing
 "set tabstop=2
 "set shiftwidth=2
@@ -134,15 +146,9 @@ nnoremap <leader>ss s<Space><Space><C-[>P
 " Nerdtree
 let g:NERDTreeHijackNetrw = 1
 nnoremap <leader>n<Space> :NERDTreeToggle<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gp :Gpush -v<CR>
-"nnoremap <leader>gp :!git push<CR>
 
 " Pasting stuff with no line ending in another line
 nnoremap <leader>v o<ESC>p
-
-"nnoremap ; : Messes up the repeating of previous char search
 
 " fzf
 let $FZF_DEFAULT_COMMAND = 'find .'
