@@ -11,7 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 
 " Code navigation (go to definition)
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 
 " Comments
 Plug 'scrooloose/nerdcommenter'
@@ -72,14 +72,14 @@ set wildmenu
 "pause new
 
 "gutentags
-let g:gutentags_cache_dir = '~/.gutentags'
-let g:gutentags_exclude_project_root = ['/usr/local','~/workspace/signal/tmp','~/workspace/signal/Research-Notebooks']
-let g:gutentags_ctags_exclude = ['tmp/*','data/*','models/*','vectorisers/*','scripts/*']
-let g:gutentags_file_list_command = {
-   \ 'markers': {
-     \ '.git': 'git ls-files'
-   \ },
-\ }
+"let g:gutentags_cache_dir = '~/.gutentags'
+"let g:gutentags_exclude_project_root = ['/usr/local','~/workspace/signal/tmp','~/workspace/signal/Research-Notebooks']
+"let g:gutentags_ctags_exclude = ['tmp/*','data/*','models/*','vectorisers/*','scripts/*']
+"let g:gutentags_file_list_command = {
+   "\ 'markers': {
+     "\ '.git': 'git ls-files'
+   "\ },
+"\ }
 
 set shell=bash\ -i
 set clipboard+=unnamedplus
@@ -87,8 +87,7 @@ set clipboard+=unnamedplus
 "
 set background=dark
 let mapleader=","
-colorscheme solarized
-let g:solarized_visibility = "high"
+colorscheme molokai
 
 "new
 
@@ -122,9 +121,6 @@ set mouse=a
 "set shiftwidth=2
 "set expandtab
 "set tabstop=2
-
-" Polyglot
-let g:polyglot_disabled=['html', 'html5']
 
 " cpp compile and run
 nnoremap <leader>cr :!g++ % && ./a.out <CR>
