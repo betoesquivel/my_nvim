@@ -3,13 +3,9 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'othree/html5.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
-
-" Send stuff to a repl C-c C-c
-Plug 'jpalardy/vim-slime'
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
@@ -129,9 +125,6 @@ set mouse=a
 
 " Polyglot
 let g:polyglot_disabled=['html', 'html5']
-
-" vim-slime with iPython
-let g:slime_python_ipython = 1
 
 " cpp compile and run
 nnoremap <leader>cr :!g++ % && ./a.out <CR>
